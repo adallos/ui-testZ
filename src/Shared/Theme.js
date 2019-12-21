@@ -10,7 +10,8 @@ export default {
 	/* Text and weights */
 	textWhite: '#FFFFFF',
 	textDark: '#333333',
-	light: '400',
-	regular: '700',
-	bold: '900',
+	light: '300',
+	regular: '400',
+	bold: '700',
+	bolder: '900',
 };

@@ -1,8 +1,11 @@
 import React from 'react';
+import { ViewContent } from '../GlobalStyles';
 
 function Home() {
 	return (
-		<p>This is where Home will be rendered!</p>
+		<ViewContent>
+			Home content goes here
+		</ViewContent>
 	);
 }
 

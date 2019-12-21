@@ -1,8 +1,20 @@
 import styled from 'styled-components';
 
-const MainContainer = styled.div`
+export const MainContainer = styled.div`
 	box-sizing: border-box;
 	font-family: 'Lato', sans-serif;
 `;
 
-export default MainContainer;
+export const ViewContent = styled.div`
+	position: relative;
+`;
+
+export const HeadingOuterContainer = styled.div`
+	width: 100vw;
+	background-color: hotpink;
+	position: relative;
+`;
+
+export const HeadingInnerContent = styled.div`
+	
+`;
