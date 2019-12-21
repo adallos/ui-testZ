@@ -1,26 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import styled from 'styled-components';
 import './App.css';
+import Home from './views/Home/Home';
+import PastTrials from './views/PastTrials/PastTrials';
+import HowItWorks from './views/HowItWorks/HowItWorks';
+import Login from './views/Login/Login';
+import MainContainer from './views/GlobalStyles';
+
+const AppContainer = styled.div`
+	height: 100vh;
+	width: 100vw;
+`;
+
+const routes = [
+	{
+		path: '/',
+		component: Home,
+		exact: true,
+	},
+	{
+		path: '/pasttrials',
+		component: PastTrials,
+	},
+	{
+		path: '/howitworks',
+		component: HowItWorks,
+	},
+	{
+		path: '/login',
+		component: Login,
+	},
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<AppContainer>
+			<Router>
+				<MainContainer>
+					{routes.map(route => (
+						<Route
+							key={Math.random().toString(36)}
+							path={route.path}
+							exact={route.exact}
+							component={route.component}
+						/>
+					))}
+				</MainContainer>
+			</Router>
+		</AppContainer>
+	);
 }
 
 export default App;
