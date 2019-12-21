@@ -1,8 +1,12 @@
 import React from 'react';
+import { ViewContent } from '../GlobalStyles';
 
 function PastTrials() {
 	return (
-		<p>This is where past trials will be rendered!</p>
+		<ViewContent>
+			
+
+		</ViewContent>
 	);
 }
 

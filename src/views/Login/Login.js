@@ -1,8 +1,11 @@
 import React from 'react';
+import { ViewContent } from '../GlobalStyles';
 
 function Login() {
 	return (
-		<p>This is where Login will be rendered!</p>
+		<ViewContent>
+			Login content goes here
+		</ViewContent>
 	);
 }
 

@@ -1,8 +1,11 @@
 import React from 'react';
+import { ViewContent } from '../GlobalStyles';
 
 function HowItWorks() {
 	return (
-		<p>This is where HowItWorks will be rendered!</p>
+		<ViewContent>
+			Howitworks content goes here
+		</ViewContent>
 	);
 }
 

@@ -6,11 +6,14 @@ import Home from './views/Home/Home';
 import PastTrials from './views/PastTrials/PastTrials';
 import HowItWorks from './views/HowItWorks/HowItWorks';
 import Login from './views/Login/Login';
-import MainContainer from './views/GlobalStyles';
+import { MainContainer } from './views/GlobalStyles';
+import Header from './containers/Header/Header';
 
 const AppContainer = styled.div`
+	top: 0px;
 	height: 100vh;
 	width: 100vw;
+	margin: 0px;
 `;
 
 const routes = [
@@ -38,6 +41,7 @@ function App() {
 		<AppContainer>
 			<Router>
 				<MainContainer>
+					<Header />
 					{routes.map(route => (
 						<Route
 							key={Math.random().toString(36)}
