@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import Theme from '../../Shared/Theme';
 
 export const Container = styled.header`
-	background-image: linear-gradient(to bottom, #333333, rgba(51, 51, 51, 0));
+	background-image: linear-gradient(to bottom, #333333, rgba(51, 51, 51, 0.01));
 	box-sizing: border-box;
 	color: ${Theme.textWhite};
 	display: flex;
 	justify-content: space-between; 
-	padding: 41px 133px;
+	padding: 35px 133px;
 	position: absolute;
 	top: 0px;
 	width: 100vw;

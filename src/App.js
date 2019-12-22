@@ -11,7 +11,8 @@ import { MainContainer } from './views/GlobalStyles';
 import Header from './containers/Header/Header';
 
 const AppContainer = styled.div`
-	top: 0px;
+	position: relative;
+	width: 100vw;
 `;
 
 const routes = [
