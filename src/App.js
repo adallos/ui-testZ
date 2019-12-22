@@ -12,9 +12,6 @@ import Header from './containers/Header/Header';
 
 const AppContainer = styled.div`
 	top: 0px;
-	height: 100vh;
-	width: 100vw;
-	margin: 0px;
 `;
 
 const routes = [
