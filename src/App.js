@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled from 'styled-components';
+import { Provider } from './store';
 import './App.css';
 import Home from './views/Home/Home';
 import PastTrials from './views/PastTrials/PastTrials';
@@ -38,21 +39,23 @@ const routes = [
 
 function App() {
 	return (
-		<AppContainer>
-			<Router>
-				<MainContainer>
-					<Header />
-					{routes.map(route => (
-						<Route
-							key={Math.random().toString(36)}
-							path={route.path}
-							exact={route.exact}
-							component={route.component}
-						/>
-					))}
-				</MainContainer>
-			</Router>
-		</AppContainer>
+		<Provider>
+			<AppContainer>
+				<Router>
+					<MainContainer>
+						<Header />
+						{routes.map(route => (
+							<Route
+								key={Math.random().toString(36)}
+								path={route.path}
+								exact={route.exact}
+								component={route.component}
+							/>
+						))}
+					</MainContainer>
+				</Router>
+			</AppContainer>
+		</Provider>
 	);
 }
 
