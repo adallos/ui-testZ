@@ -11,15 +11,39 @@ export const AddRulingContainer = Styled.div`
 	align-items: center;
 	font-weight: ${Theme.regular};
 	margin: 30px 0px;
+
+	@media ${Theme.mobile} {
+		flex-direction: column;
+	};
+
+	@media ${Theme.laptop} {
+		flex-direction: row;
+	};
 `;
 
 export const AddSomeonePhrase = Styled.span`
-	font-size: 30px;
+	
 	filter: blur(0px);
+	@media ${Theme.mobile} {
+		font-size: 20px;
+	};
+
+	@media ${Theme.laptop} {
+		font-size: 30px;
+	};
+`;
+
+export const CompanyPhrase = Styled.p`
+	font-size: 20px;
+	display: flex;
+	display: inline-block;
+	margin: 0px;
+	text-align: center;
+
 `;
 
 export const SubmitNameButton = Styled.button`
-	padding: 18px 40px;
+	
 	font-size: 20px;
 	background-color: transparent;
 	border: 3px solid ${Theme.textDark};
@@ -31,4 +55,12 @@ export const SubmitNameButton = Styled.button`
 	&:focus {
 		outline: none;
 	},
+
+	@media ${Theme.mobile} {
+		padding: 15px 20px;
+	};
+
+	@media ${Theme.laptop} {
+		padding: 18px 40px;
+	};
 `;

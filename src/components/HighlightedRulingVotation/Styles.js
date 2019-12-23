@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Theme from '../../Shared/Theme';
 
 export const InfoContainer = styled.div`
-	width: 40%;
+
 	z-index: 3;
 	background-color: rgba(0,0,0, 0.4);
 	font-size: 16px;
@@ -10,13 +10,40 @@ export const InfoContainer = styled.div`
 	font-weight:${Theme.light};
 	padding: 40px 35px 80px;
 	position: relative;
+	
+	
+	@media ${Theme.mobile} {
+		font-size: 30px;
+  }
+
+	@media ${Theme.laptop} {
+		box-sizing: border-box;
+		width: 80%;
+		justify-content: center;
+  }
+
+	@media ${Theme.desktop} {
+		width: 40%;
+		display: block;
+  }
 `;
 
 export const RulingName = styled.span`
-	font-size: 60px;
 	font-weight: ${Theme.regular};
 	opacity: 1;
 	display: block;
+
+	@media ${Theme.mobile} {
+		font-size: 30px;
+  }
+
+	@media ${Theme.laptop} {
+		font-size: 45px;
+  }
+
+	@media ${Theme.desktop} {
+		font-size: 60px;
+  }
 `;
 
 export const RulingAbout = styled.p`
@@ -36,6 +63,13 @@ export const WikiInfo = styled.a`
 	&:visited {
 		color:${Theme.white};
   }
+	@media ${Theme.mobile} {
+		display: none;
+  }
+
+	@media ${Theme.laptop} {
+		display: block;
+  }
 `;
 
 export const WikiIcon = styled.img`
@@ -45,9 +79,18 @@ export const WikiIcon = styled.img`
 
 export const VerdictQuestion = styled.span`
 	font-size: 20px;
-	margin: 20px 0px;
+
 	font-weight: ${Theme.bold};
-	display: inline-block;
+	
+
+	@media ${Theme.mobile} {
+		display: none;
+  }
+
+	@media ${Theme.laptop} {
+		display: inline-block;
+		margin: 20px 0px;
+  }
 `;
 
 export const VoteAgainButton = styled.button`
@@ -68,4 +111,5 @@ export const VoteAgainButton = styled.button`
 	&:active {
 		background-color: ${Theme.darkGray}77;
 	}
+
 `;

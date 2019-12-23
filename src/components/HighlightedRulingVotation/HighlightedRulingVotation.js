@@ -21,12 +21,15 @@ function HighlightedRulingContainer(props) {
 		rulingInfo: { votes },
 	} = props;
 
-	const [areResultsHidden, toggleVisibility] = useState(false);
+	const [areResultsHidden, toggleVisibility] = useState(true);
 
 	const childVotation = () => toggleVisibility(!areResultsHidden);
 
 	return (
-		<InfoContainer>
+		<InfoContainer
+			role="contentinfo"
+			aria-label={`Vote thumbs up or down for ${name}`}
+		>
 			{
 				areResultsHidden
 					? (

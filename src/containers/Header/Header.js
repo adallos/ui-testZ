@@ -1,11 +1,12 @@
 import React from 'react';
+
 import {
 	Container,
 	Title,
 	NavAndSearch,
 	Navbar,
-	Searchbar,
 	NavItem,
+	NavLink,
 } from './Styles';
 
 function Header() {
@@ -29,18 +30,17 @@ function Header() {
 
 	return (
 		<Container>
-			<Title>Rule of Thumb</Title>
+			<Title to="/">Rule of Thumb</Title>
 			<NavAndSearch>
 				<Navbar>
 					{NavItems.map(item => (
 						<NavItem
 							key={item.key}
 						>
-							{item.text}
+							<NavLink to={item.redirectsTo}>{item.text}</NavLink>
 						</NavItem>
 					))}
 				</Navbar>
-				<Searchbar />
 			</NavAndSearch>
 		</Container>
 	);

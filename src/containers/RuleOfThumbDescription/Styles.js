@@ -10,14 +10,34 @@ export const DescriptionContainer = styled.div`
 	justify-content: space-between;
 	color: ${Theme.textDark};
 	align-items: center;
+
+	@media ${Theme.mobile} {
+		flex-direction: column;
+  }
+
+	@media ${Theme.laptop} {
+		flex-direction: row;
+	}
+
 `;
 
 export const WhatIsRuleOfThumb = styled.p`
 	font-size: 15px;
 	display: inline;
 	margin: 0px;
-	width: 75%;
 	line-height: 1.53;
+	
+	@media ${Theme.mobile} {
+		width: 100%;
+  }
+
+	@media ${Theme.laptop} {
+		width: 85%;
+	}
+
+	@media ${Theme.desktop} {
+		width: 75%;
+	}
 `;
 
 export const CompanyPhrase = styled.p`
@@ -26,7 +46,14 @@ export const CompanyPhrase = styled.p`
 	display: inline-block;
 	margin: 0px;
 	text-align: center;
-	width: 25%;
+
+	@media ${Theme.mobile} {
+		width: 100%;
+  }
+
+	@media ${Theme.laptop} {
+		width: 25%;
+	}
 `;
 
 export const BeCountedPhrase = styled.span`

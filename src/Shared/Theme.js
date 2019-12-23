@@ -17,4 +17,9 @@ export default {
 	textDark: '#333333',
 	textGray: '#464646',
 	textWhite: '#FFFFFF',
+
+	/* Media Queries */
+	mobile: '(min-width: 375px) ',
+	laptop: '(min-width: 1024px)',
+	desktop: '(min-width: 1440px)',
 };

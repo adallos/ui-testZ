@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HighlightedImage } from './Styles';
+import HighlightedImage from './Styles';
 
 function HighlightedRulingImage(props) {
 	const {
@@ -8,7 +8,12 @@ function HighlightedRulingImage(props) {
 	} = props;
 
 	return (
-		<HighlightedImage src={rulingImage} draggable="false" />
+		<HighlightedImage
+			src={rulingImage}
+			draggable="false"
+			role="img"
+			aria-label="Image of Highlighted Ruling"
+		/>
 	);
 }
 

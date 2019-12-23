@@ -3,7 +3,10 @@ import { AddRulingContainer, AddSomeonePhrase, SubmitNameButton } from './Styles
 
 function SubmitNameForRuling() {
 	return (
-		<AddRulingContainer>
+		<AddRulingContainer
+			role="contentinfo"
+			aria-label="Submit someone for the next ruling"
+		>
 			<AddSomeonePhrase>
 				Is there anyone else you would want us to add?
 			</AddSomeonePhrase>

@@ -4,8 +4,7 @@ import { ViewContent } from '../GlobalStyles';
 function PastTrials() {
 	return (
 		<ViewContent>
-			
-
+			PastTrials content goes here
 		</ViewContent>
 	);
 }

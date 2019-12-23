@@ -11,7 +11,10 @@ function HighlightedRuling(props) {
 		poll,
 	} = props;
 	return (
-		<Container>
+		<Container
+			role="contentinfo"
+			aria-label="Current ruling of the month"
+		>
 			<HighlightedRulingImage rulingImage={image} />
 			<HighlightedRulingVotation rulingInfo={poll} />
 			<RulingDaysUntilClosed />

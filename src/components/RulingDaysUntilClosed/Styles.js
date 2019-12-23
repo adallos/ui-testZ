@@ -6,7 +6,6 @@ export const OuterContainer = styled.div`
 	background-color: ${Theme.darkGray}33;
 	top: calc(100vh - 210px);
 	color: ${Theme.white};
-	display: flex;
 	flex-wrap: nowrap;
 	font-size: 13px;
 	font-weight: ${Theme.regular};
@@ -15,6 +14,15 @@ export const OuterContainer = styled.div`
 	position: absolute;
 	text-transform: uppercase;
 	width: 100vw;
+	
+
+	@media ${Theme.mobile} {
+		display: none;
+  }
+
+	@media ${Theme.laptop} {
+		display: flex;
+  }
 `;
 
 export const DaysLeft = styled.span`

@@ -25,8 +25,16 @@ function SingleRuling(props) {
 	} = props;
 
 	return (
-		<RulingContainer>
-			<RulingImage src={image} draggable="false" />
+		<RulingContainer
+			role="contentinfo"
+			aria-label={`Results for the ruling of ${name}`}
+		>
+			<RulingImage
+				src={image}
+				role="img"
+				aria-label={`Image of ${name}`}
+				draggable="false"
+			/>
 			<RulingContent>
 				<RulingContentName>{name}</RulingContentName>
 				<RulingContentInfo>{info}</RulingContentInfo>
