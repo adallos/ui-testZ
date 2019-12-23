@@ -112,4 +112,12 @@ export const VoteAgainButton = styled.button`
 		background-color: ${Theme.darkGray}77;
 	}
 
+	@media ${Theme.mobile} {
+		width: 50%;
+  }
+
+	@media ${Theme.laptop} {
+		width: 80%;
+  }
+
 `;

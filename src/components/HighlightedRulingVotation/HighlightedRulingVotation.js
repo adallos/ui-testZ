@@ -19,6 +19,7 @@ function HighlightedRulingContainer(props) {
 		rulingInfo: { info },
 		rulingInfo: { wiki },
 		rulingInfo: { votes },
+		rulingInfo,
 	} = props;
 
 	const [areResultsHidden, toggleVisibility] = useState(true);
@@ -58,6 +59,7 @@ function HighlightedRulingContainer(props) {
 							</VerdictQuestion>
 							<SingleRulingVotation
 								callbackWhenVote={childVotation}
+								rulingInfo={rulingInfo}
 							/>
 						</React.Fragment>
 					)
