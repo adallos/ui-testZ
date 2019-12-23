@@ -22,15 +22,35 @@ export const RulingContent = styled.div`
 `;
 
 export const RulingContentName = styled.span`
-	font-size: 45px;
+	
 	display: block;
+
+	@media ${Theme.mobile} {
+		font-size: 30px;
+  }
+
+	@media ${Theme.laptop} {
+		font-size: 35px;
+	}
+
+	@media ${Theme.desktop} {
+		font-size: 45px;
+	}
 `;
 
 export const RulingContentInfo = styled.p`
 	font-size: 16px;
-	display: block;
+	
 	margin: 0px;
 	padding-right: 50px;
+
+	@media ${Theme.mobile} {
+		display: none;
+  }
+
+	@media ${Theme.laptop} {
+		display: block;
+	}
 `;
 
 export const FullReportButton = styled.button`
@@ -59,12 +79,19 @@ export const RulingExtraInfo = styled.div`
 `;
 
 export const RulingTimeAndCategory = styled.div`
-	display: flex;
 	flex-direction: column;
 	text-align: end; 
+	@media ${Theme.mobile} {
+		display: none;
+  }
+
+	@media ${Theme.laptop} {
+		display: flex;
+  }
 `;
 
 export const MonthsSinceClosed = styled.span`
+	
 `;
 
 export const Category = styled.span`

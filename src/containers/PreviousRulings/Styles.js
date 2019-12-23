@@ -15,6 +15,17 @@ export const RulingsTitle = styled.span`
 export const RulingsList = styled.div`
 	display: grid;
 	grid-gap: 40px;
-	grid-template-columns: auto auto;
 	padding: 20px 0px;
+
+	@media ${Theme.mobile} {
+		grid-template-columns: auto;
+  }
+
+	@media ${Theme.laptop} {
+		grid-template-columns: auto auto;
+  }
+
+	@media ${Theme.desktop} {
+		grid-template-columns: auto auto auto;
+  }
 `;

@@ -8,7 +8,10 @@ import {
 
 function RuleOfThumbDescription() {
 	return (
-		<DescriptionContainer>
+		<DescriptionContainer
+			role="contentinfo"
+			aria-label="Description of Rule of Thumb"
+		>
 			<CompanyPhrase>
 				Speak out. Be heard.
 				<BeCountedPhrase>

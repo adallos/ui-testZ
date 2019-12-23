@@ -9,7 +9,10 @@ function PreviousRulings(props) {
 	} = props;
 
 	return (
-		<RulingsContainer>
+		<RulingsContainer
+			role="contentinfo"
+			aria-label="Previous months rulings"
+		>
 			<RulingsTitle>
 				Previous Rulings
 			</RulingsTitle>

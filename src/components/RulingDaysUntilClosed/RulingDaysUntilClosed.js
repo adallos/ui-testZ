@@ -7,7 +7,10 @@ import {
 
 function RulingDaysUntilClosed() {
 	return (
-		<OuterContainer>
+		<OuterContainer
+			role="contentinfo"
+			aria-label="Days left until the current ruling closes"
+		>
 			Closing in
 			<DaysLeft>
 				<b>22 </b>
