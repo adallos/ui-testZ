@@ -42,10 +42,10 @@ export const FullReportButton = styled.button`
 	&:hover {
 		cursor: pointer;
 		background-color: ${Theme.darkGray}55;
-	},
+	};
 	&:focus {
 		outline: none;
-	}
+	};
 	&:active {
 		background-color: ${Theme.darkGray}77;
 	}

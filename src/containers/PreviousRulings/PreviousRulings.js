@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Store } from '../../store';
 import { RulingsContainer, RulingsTitle, RulingsList } from './Styles';
 import SingleRuling from '../../components/SingleRuling/SingleRuling';
 
@@ -31,7 +30,7 @@ PreviousRulings.defaultProps = {
 };
 
 PreviousRulings.propTypes = {
-	rulings: PropTypes.shape([]),
+	rulings: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 export default PreviousRulings;

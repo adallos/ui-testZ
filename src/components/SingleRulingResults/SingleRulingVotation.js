@@ -1,23 +1,42 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { VotesContainer, LightThumbsBar, ThumbIcon } from './Style';
 import thumbsUpIcon from '../../assets/img/thumbs-up-solid.svg';
 import thumbsDownIcon from '../../assets/img/thumbs-down-solid.svg';
+import { Store } from '../../store';
 
 function SingleRulingVotation(props) {
 	const {
-		votes: { thumbsUp },
-		votes: { thumbsDown },
+		dispatch,
+		reducerState,
+	} = useContext(Store);
+
+	const {
+		callbackWhenVote,
 	} = props;
 
-	console.log(props);
-	
+	const vote = (action) => {
+		dispatch({ type: action, payload: reducerState });
+	};
+
 	return (
 		<VotesContainer>
-			<LightThumbsBar thumbType="up">
+			<LightThumbsBar
+				thumbType="up"
+				onClick={() => {
+					vote('THUMBS_UP');
+					callbackWhenVote('THUMBS_UP');
+				}}
+			>
 				<ThumbIcon src={thumbsUpIcon} />
 			</LightThumbsBar>
-			<LightThumbsBar thumbType="down">
+			<LightThumbsBar
+				thumbType="down"
+				onClick={() => {
+					vote('THUMBS_DOWN');
+					callbackWhenVote('THUMBS_DOWN');
+				}}
+			>
 				<ThumbIcon src={thumbsDownIcon} />
 			</LightThumbsBar>
 		</VotesContainer>
@@ -25,14 +44,11 @@ function SingleRulingVotation(props) {
 }
 
 SingleRulingVotation.defaultProps = {
-	votes: {},
+	callbackWhenVote: undefined,
 };
 
 SingleRulingVotation.propTypes = {
-	votes: PropTypes.shape({
-		thumbsUp: PropTypes.number,
-		thumbsDown: PropTypes.number,
-	}),
+	callbackWhenVote: PropTypes.func,
 };
 
 export default SingleRulingVotation;
