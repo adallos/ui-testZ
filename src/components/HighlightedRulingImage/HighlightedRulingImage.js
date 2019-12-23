@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { HighlightedImage } from './Styles';
 
 function HighlightedRulingImage(props) {
-	const [photoToRender, updatePhoto] = useState({});
-
 	const {
 		rulingImage,
 	} = props;

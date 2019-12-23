@@ -1,50 +1,26 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Store } from '../../store';
 import { ViewContent } from '../GlobalStyles';
 import HighlightedRuling from '../../containers/HighlightedRuling/HighlightedRuling';
 import PreviousRulings from '../../containers/PreviousRulings/PreviousRulings';
 import RuleOfThumbDescription from '../../containers/RuleOfThumbDescription/RuleOfThumbDesc';
 import SubmitNameForRuling from '../../containers/SubmitNameForRuling/SubmitNameForRuling';
-
+import Footer from '../../components/Footer/Footer';
 
 
 function Home() {
-	const [componentData, updateComponentData] = useState({
-		polls: [],
-		highlightedPollName: 'Pope Francis',
-		highlightedPollContent: {},
-	});
 	const {
-		dispatch,
 		reducerState: { polls },
+		reducerState: { highlightedPoll: [highlightedPoll] },
 	} = useContext(Store);
-
-	useEffect(() => {
-		const {
-			highlightedPollName,
-		} = componentData;
-
-		const highlightedPollContent = componentData.polls.filter(
-			singlePoll => singlePoll.name === highlightedPollName,
-		);
-		updateComponentData({
-			...componentData,
-			highlightedPollContent,
-			polls,
-		});
-	}, [polls]);
-
-	const getHighlightedRulingData = () => (
-		componentData.polls.filter(
-			singlePoll => singlePoll.name === componentData.highlightedPollName,
-		)[0]);
 
 	return (
 		<ViewContent>
-			<HighlightedRuling poll={getHighlightedRulingData()} />
+			<HighlightedRuling poll={highlightedPoll} />
 			<RuleOfThumbDescription />
-			<PreviousRulings />
+			<PreviousRulings rulings={polls} />
 			<SubmitNameForRuling />
+			<Footer />
 		</ViewContent>
 	);
 }
