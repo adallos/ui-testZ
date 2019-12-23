@@ -9,14 +9,13 @@ import {
 	VerdictQuestion,
 } from './Styles';
 import iconwiki from '../../assets/img/wiki.png';
+import SingleRulingVotation from '../SingleRulingResults/SingleRulingVotation';
 
 function HighlightedRulingContainer(props) {
 	const {
-		rulingInfo: { image },
 		rulingInfo: { name },
 		rulingInfo: { info },
 		rulingInfo: { wiki },
-		rulingInfo: { pollInfo },
 		rulingInfo: { votes },
 	} = props;
 
@@ -43,6 +42,9 @@ function HighlightedRulingContainer(props) {
 			<VerdictQuestion>
 				What&apos;s your Verdict?
 			</VerdictQuestion>
+			<SingleRulingVotation
+				votes={votes}
+			/>
 		</InfoContainer>
 	);
 }
@@ -57,7 +59,6 @@ HighlightedRulingContainer.propTypes = {
 		wiki: PropTypes.string,
 		pollInfo: PropTypes.shape({
 			monthsSincePosted: PropTypes.number,
-			category: PropTypes.string,
 		}),
 		votes: PropTypes.shape({
 			thumbsUp: PropTypes.number,

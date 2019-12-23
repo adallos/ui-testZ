@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import HighlightedRulingImage from '../../components/HighlightedRulingImage/HighlightedRulingImage';
 import HighlightedRulingVotation from '../../components/HighlightedRulingVotation/HighlightedRulingVotation';
 import RulingDaysUntilClosed from '../../components/RulingDaysUntilClosed/RulingDaysUntilClosed';
-import { Container } from './Styles';
+import Container from './Styles';
 
 function HighlightedRuling(props) {
 	const {

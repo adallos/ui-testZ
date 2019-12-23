@@ -8,7 +8,8 @@ export const InfoContainer = styled.div`
 	font-size: 16px;
 	color:${Theme.white};
 	font-weight:${Theme.light};
-	padding: 40px 35px;
+	padding: 40px 35px 80px;
+	position: relative;
 `;
 
 export const RulingName = styled.span`
@@ -44,7 +45,7 @@ export const WikiIcon = styled.img`
 
 export const VerdictQuestion = styled.span`
 	font-size: 20px;
-	margin-top: 43px;
-	font-weight: ${Theme.bold}
+	margin: 20px 0px;
+	font-weight: ${Theme.bold};
 	display: inline-block;
 `;

@@ -12,19 +12,26 @@ const CreateStore = (reducer, initialState) => {
 
 const localStorageInfo = () => localStorage.getItem('uiPoll');
 
+
 const localPollsState = () => {
 	let storedPolls = [];
+	let highlightedPoll = {};
 	if (!localStorageInfo()) {
 		getPolls()
 			.then((data) => {
 				localStorage.setItem('uiPoll', JSON.stringify(data));
 				storedPolls = data;
+				highlightedPoll = data.filter(poll => poll.pollInfo.monthsSincePosted === 0);
 			})
 			.catch(err => console.log(err.message));
 	} else {
 		storedPolls = JSON.parse(localStorage.getItem('uiPoll'));
+		highlightedPoll = storedPolls.filter(poll => poll.pollInfo.monthsSincePosted === 0);
 	}
-	return { polls: storedPolls };
+	return {
+		polls: storedPolls.filter(poll => poll.pollInfo.monthsSincePosted !== 0),
+		highlightedPoll,
+	};
 };
 
 const Provider = ({ children }) => {

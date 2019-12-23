@@ -1,11 +1,12 @@
 export default {
 	/* Semantic */
-	thumbsDown: 'rgba(252, 185, 55, 0.3)',
-	thumbsUp: 'rgba(252, 185, 55, 0.3)',
+	thumbsDown: '#1cbbb4',
+	thumbsUp: '#ffad1d',
 
 	/* Palette */
 	darkGray: '#707070',
 	lightGray: '#E7E7E7',
+	lighterGray: '#ebebeb',
 	white: '#FCFFFC',
 
 	/* Text and weights */

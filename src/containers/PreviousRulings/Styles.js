@@ -1,0 +1,20 @@
+import styled from 'styled-components';
+import Theme from '../../Shared/Theme';
+
+export const RulingsContainer = styled.section`
+	position: relative;
+`;
+
+export const RulingsTitle = styled.span`
+	font-size: 40px;
+	font-weight: ${Theme.light};
+	color: ${Theme.textDark};
+	padding-bottom: 20px;
+`;
+
+export const RulingsList = styled.div`
+	display: grid;
+	grid-gap: 40px;
+	grid-template-columns: auto auto;
+	padding: 20px 0px;
+`;

@@ -5,6 +5,7 @@ export const MainContainer = styled.div`
 	font-family: 'Lato', sans-serif;
 	position: absolute;
 	top: 0px;
+	
 `;
 
 export const ViewContent = styled.div`
@@ -18,8 +19,4 @@ export const ViewContent = styled.div`
 export const HeadingOuterContainer = styled.div`
 	width: 100vw;
 	position: relative;
-`;
-
-export const HeadingInnerContent = styled.div`
-	
 `;
