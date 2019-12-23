@@ -1,53 +1,60 @@
 export default function PollsReducer(state, action) {
 	const receivedStorage = action.payload;
+	let updatedPoll = {};
 	const {
-		highlightedPoll,
-		polls,
-		highlightedPoll: [{ votes }],
+		image,
+		name,
+		info,
+		wiki,
+		pollInfo,
+		votes,
 	} = receivedStorage;
-	let updatedPoll = highlightedPoll[0];
-	let localStorageUpdate = polls;
 
+	const staticPolls = state.polls.filter(poll => poll.name !== name);
+
+	let polls = [];
 	switch (action.type) {
 	case 'THUMBS_UP':
-		updatedPoll = [{
-			...updatedPoll,
+		updatedPoll = {
+			image,
+			name,
+			info,
+			wiki,
+			pollInfo,
 			votes: {
 				thumbsUp: votes.thumbsUp + 1,
 				thumbsDown: votes.thumbsDown,
 			},
-		}];
-
-		localStorageUpdate = [
-			...polls,
-			updatedPoll[0],
+		};
+		polls = [
+			...staticPolls,
+			updatedPoll,
 		];
 
-		localStorage.setItem('uiPoll', JSON.stringify(localStorageUpdate));
-
+		localStorage.setItem('uiPoll', JSON.stringify(polls));
 		return {
-			...receivedStorage,
-			highlightedPoll: updatedPoll,
+			polls,
 		};
 	case 'THUMBS_DOWN':
-		updatedPoll = [{
-			...updatedPoll,
+		updatedPoll = {
+			image,
+			name,
+			info,
+			wiki,
+			pollInfo,
 			votes: {
 				thumbsUp: votes.thumbsUp,
 				thumbsDown: votes.thumbsDown + 1,
 			},
-		}];
-
-		localStorageUpdate = [
-			...polls,
-			updatedPoll[0],
+		};
+		polls = [
+			...staticPolls,
+			updatedPoll,
 		];
 
-		localStorage.setItem('uiPoll', JSON.stringify(localStorageUpdate));
-
+		localStorage.setItem('uiPoll', JSON.stringify(polls));
 		return {
-			...receivedStorage,
-			highlightedPoll: updatedPoll,
+			polls,
 		};
 	default:
 		return {};

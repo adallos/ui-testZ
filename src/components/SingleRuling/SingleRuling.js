@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
 	RulingContainer,
@@ -12,10 +12,15 @@ import {
 	MonthsSinceClosed,
 	Category,
 } from './Styles';
+import {
+	RulingName,
+	VoteAgainButton,
+} from '../HighlightedRulingVotation/Styles';
 import SingleRulingResults from '../SingleRulingResults/SingleRulingResults';
 
 function SingleRuling(props) {
 	const {
+		rulingInfo,
 		rulingInfo: { image },
 		rulingInfo: { name },
 		rulingInfo: { info },
@@ -24,38 +29,60 @@ function SingleRuling(props) {
 		rulingInfo: { votes },
 	} = props;
 
+	const [areResultsHidden, toggleVisibility] = useState(true);
+
+	const childVotation = () => toggleVisibility(!areResultsHidden);
+
 	return (
 		<RulingContainer
 			role="contentinfo"
 			aria-label={`Results for the ruling of ${name}`}
 		>
-			<RulingImage
-				src={image}
-				role="img"
-				aria-label={`Image of ${name}`}
-				draggable="false"
-			/>
-			<RulingContent>
-				<RulingContentName>{name}</RulingContentName>
-				<RulingContentInfo>{info}</RulingContentInfo>
-				<RulingExtraInfo>
-					<FullReportButton>
-						View Full Report
-					</FullReportButton>
-					<RulingTimeAndCategory>
-						<MonthsSinceClosed>
-							{`${monthsSincePosted} ${monthsSincePosted > 1 ? 'months' : 'month'} ago`}
-						</MonthsSinceClosed>
-						<Category>
-							in&nbsp;
-							<b>{category}</b>
-						</Category>
-					</RulingTimeAndCategory>
-				</RulingExtraInfo>
-			</RulingContent>
-			<SingleRulingResults
-				votes={votes}
-			/>
+			{
+				areResultsHidden
+					? (
+						<React.Fragment>
+							<RulingImage
+								src={image}
+								role="img"
+								aria-label={`Image of ${name}`}
+								draggable="false"
+							/>
+							<RulingContent>
+								<RulingContentName>{name}</RulingContentName>
+								<RulingContentInfo>{info}</RulingContentInfo>
+								<RulingExtraInfo>
+									<FullReportButton>
+										View Full Report
+									</FullReportButton>
+									<RulingTimeAndCategory>
+										<MonthsSinceClosed>
+											{`${monthsSincePosted} ${monthsSincePosted > 1 ? 'months' : 'month'} ago`}
+										</MonthsSinceClosed>
+										<Category>
+											in&nbsp;
+											<b>{category}</b>
+										</Category>
+									</RulingTimeAndCategory>
+								</RulingExtraInfo>
+							</RulingContent>
+							<SingleRulingResults
+								votes={votes}
+								callbackWhenVote={childVotation}
+								rulingInfo={rulingInfo}
+							/>
+						</React.Fragment>
+					) : (
+						<React.Fragment>
+							<RulingName> Thanks for voting!</RulingName>
+							<VoteAgainButton
+								onClick={() => toggleVisibility(!areResultsHidden)}
+							>
+									Vote again
+							</VoteAgainButton>
+						</React.Fragment>
+					)
+			}
 		</RulingContainer>
 	);
 }

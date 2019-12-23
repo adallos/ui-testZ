@@ -8,15 +8,15 @@ import { Store } from '../../store';
 function SingleRulingVotation(props) {
 	const {
 		dispatch,
-		reducerState,
 	} = useContext(Store);
 
 	const {
+		rulingInfo,
 		callbackWhenVote,
 	} = props;
 
 	const vote = (action) => {
-		dispatch({ type: action, payload: reducerState });
+		dispatch({ type: action, payload: rulingInfo });
 	};
 
 	return (
@@ -45,10 +45,23 @@ function SingleRulingVotation(props) {
 
 SingleRulingVotation.defaultProps = {
 	callbackWhenVote: undefined,
+	rulingInfo: {},
 };
 
 SingleRulingVotation.propTypes = {
 	callbackWhenVote: PropTypes.func,
+	rulingInfo: PropTypes.shape({
+		name: PropTypes.string,
+		info: PropTypes.string,
+		wiki: PropTypes.string,
+		pollInfo: PropTypes.shape({
+			monthsSincePosted: PropTypes.number,
+		}),
+		votes: PropTypes.shape({
+			thumbsUp: PropTypes.number,
+			thumbsDown: PropTypes.number,
+		}),
+	}),
 };
 
 export default SingleRulingVotation;
