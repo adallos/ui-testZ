@@ -1,7 +1,7 @@
 export default {
 	/* Semantic */
-	thumbsDown: '#1cbbb4',
-	thumbsUp: '#ffad1d',
+	thumbsUp: '#1cbbb4',
+	thumbsDown: '#ffad1d',
 
 	/* Palette */
 	darkGray: '#707070',

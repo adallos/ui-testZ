@@ -8,14 +8,13 @@ import Container from './Styles';
 function HighlightedRuling(props) {
 	const {
 		poll: { image },
-		poll: { pollInfo },
 		poll,
 	} = props;
 	return (
 		<Container>
 			<HighlightedRulingImage rulingImage={image} />
 			<HighlightedRulingVotation rulingInfo={poll} />
-			<RulingDaysUntilClosed dateAndCatecory={pollInfo} />
+			<RulingDaysUntilClosed />
 		</Container>
 	);
 }

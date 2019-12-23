@@ -49,3 +49,23 @@ export const VerdictQuestion = styled.span`
 	font-weight: ${Theme.bold};
 	display: inline-block;
 `;
+
+export const VoteAgainButton = styled.button`
+	width: 100%;
+	border: solid 1px ${Theme.white};
+	padding: 12px 25px;
+	margin: 20px 0px;
+	font-size: 14px;
+	color: ${Theme.white};
+	background-color: ${Theme.darkGray}33;
+	&:hover {
+		cursor: pointer;
+		background-color: ${Theme.darkGray}55;
+	};
+	&:focus {
+		outline: none;
+	};
+	&:active {
+		background-color: ${Theme.darkGray}77;
+	}
+`;

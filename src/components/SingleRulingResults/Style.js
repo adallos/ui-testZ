@@ -10,6 +10,7 @@ export const ResultsContainer = Styled.div`
 	width: 100%;
 	opacity: 0.9;
 	color:${Theme.white};
+	left: 0px;
 `;
 
 export const VotesContainer = Styled.div`
@@ -43,7 +44,7 @@ export const ThumbsBar = Styled.div`
 	)}
 `;
 
-export const LightThumbsBar = Styled.button`
+export const LightThumbsBar = Styled.div`
 	font-weight: ${Theme.light};
 	width: 50%;
 	background-color: ${props => (

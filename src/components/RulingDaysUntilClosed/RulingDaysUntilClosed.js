@@ -5,11 +5,7 @@ import {
 	DaysLeft,
 } from './Styles';
 
-function RulingDaysUntilClosed(props) {
-	const {
-		dateAndCategory: { monthsSincePosted },
-	} = props;
-
+function RulingDaysUntilClosed() {
 	return (
 		<OuterContainer>
 			Closing in
