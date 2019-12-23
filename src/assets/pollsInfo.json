@@ -1,0 +1,71 @@
+[{
+        "image": "https://ibin.co/w800/568CW9z2bwVw.png",
+        "name": "Cristina Fernández de Kirchner",
+        "info": "The second woman to hold the Argentine presidency and the first directly elected female president.",
+        "wiki": "https://en.wikipedia.org/wiki/Cristina_Fern%C3%A1ndez_de_Kirchner",
+        "pollInfo": {
+            "monthsSincePosted": 1,
+            "category": "Politics"
+        },
+        "votes": {
+            "thumbsUp": 4,
+            "thumbsDown": 7
+        }
+    },
+    {
+        "image": "https://ibin.co/w800/568E9wXD8qWy.png",
+        "name": "Kanye West",
+        "info": "An American rapper, singer, songwriter, record producer and entrepreneur.",
+        "wiki": "https://en.wikipedia.org/wiki/Kanye_West",
+        "pollInfo": {
+            "monthsSincePosted": 1,
+            "category": "Entertainment"
+        },
+        "votes": {
+            "thumbsUp": 5,
+            "thumbsDown": 3
+        }
+    },
+    {
+        "image": "https://ibin.co/w800/568GccMSwNg4.png",
+        "name": "Malala Yousafzai",
+        "info": "A Pakistani activist for female education and the youngest Nobel Prize laureate.",
+        "wiki": "https://en.wikipedia.org/wiki/Malala_Yousafzai",
+        "pollInfo": {
+            "monthsSincePosted": 1,
+            "category": "Entertainment"
+        },
+        "votes": {
+            "thumbsUp": 8,
+            "thumbsDown": 2
+        }
+    },
+    {
+        "image": "https://ibin.co/w800/56G7IJ3AQY9U.jpg",
+        "name": "Mark Zuckerberg",
+        "info": "An American internet entrepreneur and philanthropist known for leading Facebook, Inc.",
+        "wiki": "https://en.wikipedia.org/wiki/Mark_Zuckerberg",
+        "pollInfo": {
+            "monthsSincePosted": 1,
+            "category": "Business"
+        },
+        "votes": {
+            "thumbsUp": 7,
+            "thumbsDown": 6
+        }
+    },
+    {
+        "image": "https://ibin.co/w800/56G6hSrYlLwS.png",
+        "name": "Pope Francis",
+        "info": "He’s talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up)",
+        "wiki": "https://en.wikipedia.org/wiki/Pope_Francis",
+        "pollInfo": {
+            "monthsSincePosted": 0,
+            "category": "Entertainment"
+        },
+        "votes": {
+            "thumbsUp": 6,
+            "thumbsDown": 9
+        }
+    }
+]
